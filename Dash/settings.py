@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure--an_uo&zh8xi1-rah$-jo5&xigf+oc-799=#&(dkv6a483d$bj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'tailwind',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
