@@ -35,6 +35,7 @@ AUTH_USER_MODEL = 'Artist.User'
 INSTALLED_APPS = [
     'tailwind',
     'theme',
+    'Artist',
     'django_browser_reload',
     'django.contrib.admin',
     'django.contrib.auth',
