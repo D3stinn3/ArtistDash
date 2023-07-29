@@ -27,11 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# Default user model
+AUTH_USER_MODEL = 'Artist.User'
 
 # Application definition
 
 INSTALLED_APPS = [
     'tailwind',
+    'theme',
+    'django_browser_reload',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,7 +60,7 @@ ROOT_URLCONF = 'Dash.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +127,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Register Tailwind App
+TAILWIND_APP_NAME = 'theme'
+
+# Internal IPS Setting
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+# Npm path
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
