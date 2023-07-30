@@ -9,3 +9,11 @@ def landingpage(request):
 def homepage(request):
     context = {}
     return render()
+
+def loginpage(request):
+    context = {}
+    return render(request, 'temp/login.html', context)
+
+def profilepage(request):
+    context = {}
+    return render(request, 'temp/profile.html', context)
